@@ -111,9 +111,7 @@
     flex-shrink: 0;
     margin-left: 6px;
   }
-  .accordion-trigger.open::after {
-    transform: rotate(180deg);
-  }
+  .accordion-trigger.open::after { transform: rotate(180deg); }
   .accordion-body {
     display: none;
     background: white;
@@ -122,9 +120,7 @@
     color: #475569;
     line-height: 1.8;
   }
-  .accordion-body.open {
-    display: block;
-  }
+  .accordion-body.open { display: block; }
 
   .phase-badge {
     display: flex;
@@ -157,8 +153,22 @@
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    cursor: pointer;
     box-shadow: 0 4px 14px rgba(234,88,12,0.30);
+    margin-bottom: 10px;
+  }
+  .btn-video {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border-radius: 50px;
+    border: none;
+    background: linear-gradient(135deg, #0ea5e9, #0284c7);
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(2,132,199,0.35);
     margin-bottom: 10px;
   }
 
@@ -179,6 +189,16 @@
     color: #166534;
     margin-top: 4px;
   }
+  .warn-box {
+    padding: 10px 12px;
+    background: #fff7ed;
+    border: 1px solid #fed7aa;
+    border-radius: 10px;
+    font-size: 11px;
+    color: #9a3412;
+    margin-top: 8px;
+    line-height: 1.7;
+  }
   .two-choice {
     padding: 10px 12px;
     background: #f0f9ff;
@@ -197,7 +217,8 @@
     color: #0284c7;
     font-weight: 700;
     text-decoration: underline;
-    margin: 12px 0 4px;
+    margin: 0 0 14px;
+    line-height: 1.8;
   }
   .disclaimer {
     text-align: center;
@@ -261,7 +282,7 @@
         </div>
       </div>
 
-      <a href="https://account.rakuten-sec.co.jp/ApplicationTop/introduceFriend.do?introClientCd=GzfHrdOvjrc%3D&hash=85666fb8f206334d9c529e363aa1cc34&introBranchCd=%2FKsvUSSTkts%3D&routeKey=SEC01001&urlSendDt=BDpT445pCrMH9UBAaAOoYA%3D%3D&sendSnsKbn=1" class="btn-link" target="_blank">楽天証券で口座開設する（無料）</a>
+      <a href="https://account-open.rakuten-sec.co.jp/accOpen/1191111/redirect?value=e3e3273b046ca8d43e5a0d2ee2525f44bec8df22445e853f9e6f1129b2290262ba9137fb65212ff1d762b63c3e1a9a5fea3ad1190aac0cc93126b449f2820614817b70e6ed575af1946e21f9e09fbe9ad5a38b64332c9a2c09264f0a0e1ae378c8be55da67fa0aeba056ae486309b4cf716ddb3a1f76950463cba06c67bb6169d2971dd6c798dc290aeed676bed8cd1e81b978f9be98f06f5f945f1d6e8318172b69396f0bcff5591a6db9ec354eac9703954ff3c0f4580fed597e911a89e5f0ec3b11b1105f51500f43b73116b519ee5213c2363370d4e89d7600a90d663b40608d6b50b18b77346cd3471c1623ea8cdf81b675a2341b24d98e81b3cddcd432" class="btn-link" target="_blank">楽天証券で口座開設する（無料）</a>
 
       <div class="phase-badge"><span>申し込み</span></div>
 
@@ -340,21 +361,13 @@
       <div class="step-item">
         <div class="step-num">9</div>
         <div class="step-content">
-          <h3>楽天カードの申込有無を選ぶ</h3>
-          <div class="action">まだ持っていない人はここで「申込む」を選ぶとポイント還元でお得</div>
+          <h3>楽天カード・楽天銀行の申込は「後で申し込む」でOK</h3>
+          <div class="action">審査待ち中に落ち着いて申し込める。STEP 1.5で案内するのでスキップしよう</div>
         </div>
       </div>
 
       <div class="step-item">
         <div class="step-num">10</div>
-        <div class="step-content">
-          <h3>楽天銀行の申込有無を選ぶ</h3>
-          <div class="action">連携すると金利優遇・自動入金などのメリットあり。後からでも設定可</div>
-        </div>
-      </div>
-
-      <div class="step-item">
-        <div class="step-num">11</div>
         <div class="step-content">
           <h3>iDeCo・FX・信用取引口座の申込を選ぶ</h3>
           <div class="action">すべて「申し込まない」でOK。FX・信用取引は高リスクで初心者向けではない</div>
@@ -362,15 +375,20 @@
       </div>
 
       <div class="step-item">
-        <div class="step-num">12</div>
+        <div class="step-num">11</div>
         <div class="step-content">
           <h3>ログインパスワードを設定する</h3>
           <div class="action">半角英数記号8〜16文字・2種類以上の組み合わせ</div>
+          <div class="warn-box">⚠️ <strong>必ずメモしておくこと！</strong><br>
+          <div class="accordion" style="margin-top:6px;">
+            <button class="accordion-trigger" onclick="toggleAcc(this)">💡 忘れるとどうなる？</button>
+            <div class="accordion-body">ログインパスワードを忘れると、郵送での再設定手続きが必要になる。届くまで数日〜1週間かかって取引できない状態が続く。設定したらすぐにスクショorメモを。</div>
+          </div></div>
         </div>
       </div>
 
       <div class="step-item">
-        <div class="step-num">13</div>
+        <div class="step-num">12</div>
         <div class="step-content">
           <h3>申込内容を確認して完了</h3>
           <div class="action">内容を確認 →「重要書類の同意へ進む」→ 申し込み完了！</div>
@@ -378,6 +396,37 @@
       </div>
 
       <div class="info-box">⏳ 申し込み後は審査に入ります。マイナンバーカードで手続きした場合は<strong>最短翌営業日</strong>、郵送の場合は<strong>1〜2週間</strong>ほどでメールが届きます。</div>
+    </div>
+  </div>
+
+  <!-- STEP 1.5: 審査待ち中にやること -->
+  <div class="card">
+    <div class="card-header">
+      <div class="section-label">STEP 1.5</div>
+      <h2>⏳ 審査待ち中にやること</h2>
+    </div>
+    <div class="card-body">
+      <div style="font-size:12px; color:#475569; margin-bottom:14px;">審査中の時間を有効活用しよう。後からだと手間が増えるものを先に済ませる。</div>
+
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <h3>楽天カードを作る</h3>
+          <div class="action">積立をカード払いにすると毎月最大1%のポイント還元がつく</div>
+          <div class="accordion">
+            <button class="accordion-trigger" onclick="toggleAcc(this)">💡 なぜ審査中に？</button>
+            <div class="accordion-body">楽天カードの審査も数日かかる。楽天証券の審査と並行して進めておくと、口座開設完了後すぐにクレカ積立の設定ができる。後回しにすると積立開始が1ヶ月遅れる場合がある。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <h3>楽天銀行を開設する</h3>
+          <div class="action">楽天証券と連携（マネーブリッジ）すると普通預金金利が大幅アップ。自動入金も便利</div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -449,7 +498,9 @@
       <h2>📈 NISA積立設定</h2>
     </div>
     <div class="card-body">
-      <div style="font-size:12px; color:#475569; margin-bottom:14px;">ここまでやって「NISAを始めた」と言える。あとは毎月自動で積立が続く。</div>
+      <div style="font-size:12px; color:#475569; margin-bottom:12px;">ここまでやって「NISAを始めた」と言える。あとは毎月自動で積立が続く。</div>
+
+      <a class="bonus-link" href="https://sota-toushilife.github.io/point-site-guide/" target="_blank">💡 最大36,400円もらいながらNISAを始めれる裏技もあるよ！<br>ここをタップ！</a>
 
       <div class="phase-badge"><span>ファンドを選ぶ</span></div>
 
@@ -470,6 +521,10 @@
             <div class="two-choice-item">🌍 <strong>eMAXIS Slim 全世界株式（オール・カントリー）</strong><br><span class="two-choice-sub">全世界の株に分散投資。一番ほったらかし向き</span></div>
             <div class="two-choice-item">🇺🇸 <strong>eMAXIS Slim 米国株式（S&amp;P500）</strong><br><span class="two-choice-sub">アメリカ500社に集中投資。過去のリターンは世界トップ級</span></div>
           </div>
+          <div style="margin-top:12px;">
+            <a href="https://canva.link/c81i09nlxk2a5sq" target="_blank" class="btn-video">▶ 動画で見る（オルカンの積立設定）</a>
+            <a href="https://canva.link/l16qj859k8jaynj" target="_blank" class="btn-video">▶ 動画で見る（S&amp;P500の買い方）</a>
+          </div>
         </div>
       </div>
 
@@ -487,7 +542,7 @@
         <div class="step-num">4</div>
         <div class="step-content">
           <h3>積立金額を入力する</h3>
-          <div class="action">1,000円から設定可。後からいつでも変更できるので無理のない金額でOK</div>
+          <div class="action">100円から設定可。後からいつでも変更できるので無理のない金額でOK</div>
           <div class="accordion">
             <button class="accordion-trigger" onclick="toggleAcc(this)">💡 上限は年120万円（月10万円）</button>
             <div class="accordion-body">つみたて投資枠の上限は年間120万円＝月最大10万円。最初から上限まで入れる必要はない。余裕のある金額から始めよう。</div>
@@ -527,7 +582,7 @@
           <div class="action">積立額に応じて楽天ポイントが自動で貯まる。ここが一番のお得ポイント</div>
           <div class="accordion">
             <button class="accordion-trigger" onclick="toggleAcc(this)">💡 楽天カードがない場合は？</button>
-            <div class="accordion-body">楽天カードをまだ持っていない場合は、このタイミングで発行しても積立設定に間に合う。銀行振込・都度入金にするとポイント還元が受けられないので、できればクレカ設定を先にしよう。</div>
+            <div class="accordion-body">STEP 1.5で楽天カードを作っておけばここでそのまま設定できる。銀行振込・都度入金にするとポイント還元が受けられないので、できればクレカ設定を先にしよう。</div>
           </div>
         </div>
       </div>
@@ -548,8 +603,6 @@
       </div>
 
       <div class="success-box">🎉 <strong>お疲れさまでした！</strong><br>積立日の前日までにカードの引き落とし口座に残高があることだけ確認すれば、あとは<strong>完全ほったらかしでOK</strong></div>
-
-      <a class="bonus-link" href="https://sota-toushilife.github.io/point-site-guide/" target="_blank">💡 最大36,400円もらいながらNISAを始めれる裏技もあるよ！<br>ここをタップ！</a>
     </div>
   </div>
 
