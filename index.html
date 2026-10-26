@@ -227,6 +227,21 @@
     line-height: 1.8;
     padding: 0 8px;
   }
+
+  /* 動画トグル */
+  .video-toggle-btn {
+    display: block; width: 100%;
+    background: linear-gradient(135deg, #0ea5e9, #0284c7);
+    color: #fff; font-weight: 700; font-size: 13px;
+    padding: 10px 12px; border-radius: 50px; border: none;
+    cursor: pointer; margin: 0 0 14px;
+    box-shadow: 0 4px 12px rgba(2,132,199,0.35);
+    text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .video-panel { display: none; margin-bottom: 14px; border-radius: 12px; overflow: hidden; }
+  .video-embed { position: relative; width: 100%; max-width: 315px; margin: 0 auto; border-radius: 12px; overflow: hidden; }
+  .video-embed::before { content: ""; display: block; padding-top: 177.78%; }
+  .video-embed iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
 </style>
 </head>
 <body>
@@ -275,6 +290,13 @@
       <h2>📝 口座開設の申し込み</h2>
     </div>
     <div class="card-body">
+
+      <button class="video-toggle-btn" onclick="toggleVideo(this)">▶ 動画で見る（口座開設方法）</button>
+      <div class="video-panel">
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/qK8GcHyo9_A" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
 
       <div class="step-item">
         <div class="step-num">1</div>
@@ -619,6 +641,16 @@
 function toggleAcc(btn) {
   btn.classList.toggle('open');
   btn.nextElementSibling.classList.toggle('open');
+}
+</script>
+
+<script>
+function toggleVideo(btn) {
+  var panel = btn.nextElementSibling;
+  var open = panel.style.display === 'block';
+  panel.style.display = open ? 'none' : 'block';
+  btn.textContent = btn.textContent
+    .replace(open ? '▼' : '▶', open ? '▶' : '▼');
 }
 </script>
 </body>
